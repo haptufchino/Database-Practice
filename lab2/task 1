@@ -1,0 +1,13 @@
+-- Task 1.1
+CREATE DATABASE university_main OWNER haptufchino TEMPLATE template0 ENCODING 'UTF8';
+
+CREATE DATABASE university_archive TEMPLATE template0 CONNECTION LIMIT 50;
+
+CREATE DATABASE university_test conn_limit 10 IS_TEMPLATE TRUE;
+
+-- Task 1.2
+CREATE TABLESPACE student_data LOCATION '/data/students';
+
+CREATE TABLESPACE course_data LOCATION'/data/courses' OWNER 'haptufchino';
+
+CREATE DATABASE university_distributed TABLESPACE student_data ENCODING LATIN9;

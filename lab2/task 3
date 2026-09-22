@@ -1,0 +1,32 @@
+-- Task 3.1, the database is university_main
+ALTER TABLE students ADD middle_name VARCHAR(30);
+ALTER TABLE students ADD student_status VARCHAR(20);
+ALTER TABLE students ALTER COLUMN phone SET TYPE VARCHAR(20);
+ALTER TABLE students ALTER COLUMN is_active SET DEFAULT TRUE;
+ALTER TABLE students ALTER COLUMN gpa SET DEFAULT 0.00;
+
+ALTER TABLE professors ADD department_code CHAR(5);
+ALTER TABLE professors ADD research_area TEXT;
+ALTER TABLE professors ALTER COLUMN years_experienced SET TYPE SMALLINT;
+ALTER TABLE professors ALTER COLUMN is_tenured SET DEFAULT FALSE;
+ALTER TABLE professors ADD last_promotion_date DATE;
+
+ALTER TABLE courses ADD prerequisite_course_id INT;
+ALTER TABLE courses ADD difficulty_level SMALLINT;
+ALTER TABLE courses ALTER COLUMN course_code SET TYPE VARCHAR(10);
+ALTER TABLE courses ALTER COLUMN credits SET DEFAULT 3;
+ALTER TABLE courses ADD lab_required BOOLEAN DEFAULT FALSE;
+
+
+-- Task 3.2
+ALTER TABLE class_schedule ADD room_capacity INT;
+ALTER TABLE class_schedule DROP COLUMN duration;
+ALTER TABLE class_schedule ADD session_type VARCHAR(15);
+ALTER TABLE class_schedule ALTER COLUMN classroom SET TYPE VARCHAR(30);
+ALTER TABLE class_schedule ADD equipment_needed TEXT;
+
+ALTER TABLE student_records ADD extra_credit_points DECIMAL(10, 1);
+ALTER TABLE student_records ALTER COLUMN grade SET TYPE VARCHAR(5); 
+ALTER TABLE student_records ALTER COLUMN extra_credit_points SET DEFAULT 0.0;
+ALTER TABLE student_records ADD final_exam_date DATE;
+ALTER TABLE student_records DROP COLUMN last_updated;
