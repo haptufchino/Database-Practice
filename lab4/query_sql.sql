@@ -1,4 +1,4 @@
-- Create tables
+-- Create tables
 CREATE TABLE employees (
  employee_id SERIAL PRIMARY KEY,
  first_name VARCHAR(50),
